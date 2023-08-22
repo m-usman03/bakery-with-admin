@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/admin/dashboard', function () {
     return view('admin.layout.master');
 });
+
+Route::resource("/admin/product",Admin\ProductController::class)->names("admin.product");

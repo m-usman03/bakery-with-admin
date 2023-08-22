@@ -30,6 +30,8 @@
 	
 	<!-- Style css -->
     <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
+	<link href="{{asset('admin/vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
+	<link rel="stylesheet" href="{{asset('admin//vendor/toastr/css/toastr.min.css')}}">
 	@yield('header')
 </head>
 <body>
@@ -165,8 +167,9 @@
     <script src="{{asset('admin/js/custom.js')}}"></script>
 	<script src="{{asset('admin/js/deznav-init.js')}}"></script>
 	
-  
-	
+	<script src="{{asset('admin/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('admin/js/plugins-init/datatables.init.js')}}"></script>
+	<script src="{{asset('admin/vendor/toastr/js/toastr.min.js')}}"></script>
 	  <script>
 		var swiper = new Swiper(".mySwiper", {
 		  slidesPerView: 5,
@@ -199,7 +202,51 @@
 		  },
 		},
 		});
+			@if(session()->has('success'))      
+				toastr.success("{{session()->get('success')}}", "Top Right", {
+                    timeOut: 500000000,
+                    closeButton: !0,
+                    debug: !1,
+                    newestOnTop: !0,
+                    progressBar: !0,
+                    positionClass: "toast-top-right",
+                    preventDuplicates: !0,
+                    onclick: null,
+                    showDuration: "300",
+                    hideDuration: "1000",
+                    extendedTimeOut: "1000",
+                    showEasing: "swing",
+                    hideEasing: "linear",
+                    showMethod: "fadeIn",
+                    hideMethod: "fadeOut",
+                    tapToDismiss: !1
+                })
+			  		  
+			@elseif(session()->has('error'))
+			toastr.error("{{session()->get('error')}}", "Top Right", {
+                    timeOut: 500000000,
+                    closeButton: !0,
+                    debug: !1,
+                    newestOnTop: !0,
+                    progressBar: !0,
+                    positionClass: "toast-top-right",
+                    preventDuplicates: !0,
+                    onclick: null,
+                    showDuration: "300",
+                    hideDuration: "1000",
+                    extendedTimeOut: "1000",
+                    showEasing: "swing",
+                    hideEasing: "linear",
+                    showMethod: "fadeIn",
+                    hideMethod: "fadeOut",
+                    tapToDismiss: !1
+                })
+			@endif              
+           
+
+      
   </script>
+   
 	
 	@yield('scripts')
 	
