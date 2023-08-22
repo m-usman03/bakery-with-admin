@@ -15,7 +15,18 @@
 				</ul>
 			</li>
 
-
+			<li class="{{ Request::is('admin/topping*') ? 'mm-active' : '' }}">
+				<a class="has-arrow" href="javascript:void(0);" aria-expanded="{{ Request::is('admin/topping*') ? 'true' : 'false' }}">
+					<div class="menu-icon">
+						<!-- SVG icon code here -->
+					</div>
+					<span class="nav-text">Topping</span>
+				</a>
+				<ul aria-expanded="{{ Request::is('admin/topping*') ? 'true' : 'false' }}" class="{{ Request::is('admin/topping*') ? 'left mm-collapse mm-show' : '' }}">
+					<li><a href="{{ route('admin.topping.create') }}">Create</a></li>
+					<li><a href="{{ route('admin.topping.index') }}">List</a></li>
+				</ul>
+			</li>
 		</ul>
 
 		<div class="copyright">

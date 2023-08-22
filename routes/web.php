@@ -24,6 +24,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.'],function(){
     Route::post('/login',[Admin\AuthController::class,'login'])->name('login');
         Route::group(['middleware'=>['admin']],function(){
             Route::resource('/product',Admin\ProductController::class)->names('product');
+            Route::resource('/topping',Admin\ToppingController::class)->names('topping');
             Route::post('/logout',[Admin\AuthController::class,'logout'])->name('logout');
         });
  });
