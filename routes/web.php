@@ -17,8 +17,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.layout.master');
-});
 
-Route::resource("/admin/product",Admin\ProductController::class)->names("admin.product");
+
+Route::group(['prefix'=>'admin','as'=>'admin.'],function(){
+    Route::get('/login',[Admin\AuthController::class,'loginForm'])->name('login_form');
+    Route::post('/login',[Admin\AuthController::class,'login'])->name('login');
+        Route::group(['middleware'=>['admin']],function(){
+            Route::resource('/product',Admin\ProductController::class)->names('product');
+            Route::post('/logout',[Admin\AuthController::class,'logout'])->name('logout');
+        });
+ });
