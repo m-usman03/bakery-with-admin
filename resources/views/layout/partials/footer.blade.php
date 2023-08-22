@@ -7,22 +7,22 @@
                   <h5 class="footer-modern-title">Gallery</h5>
                   <div class="row row-10 gutters-10" data-lightgallery="group">
                     <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-1-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-1-130x130.jpg" alt="" width="130" height="130"/></a>
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="{{asset('images/grid-gallery-1-original.jpg')}}" data-lightgallery="item"><img src="{{asset('images/grid-gallery-1-130x130.jpg')}}" alt="" width="130" height="130"/></a>
                     </div>
                     <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-2-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-2-130x130.jpg" alt="" width="130" height="130"/></a>
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="{{asset('images/grid-gallery-2-original.jpg')}}" data-lightgallery="item"><img src="{{asset('images/grid-gallery-2-130x130.jpg')}}" alt="" width="130" height="130"/></a>
                     </div>
                     <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-3-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-3-130x130.jpg" alt="" width="130" height="130"/></a>
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="{{asset('images/grid-gallery-3-original.jpg')}}" data-lightgallery="item"><img src="{{asset('images/grid-gallery-3-130x130.jpg')}}" alt="" width="130" height="130"/></a>
                     </div>
                     <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-4-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-4-130x130.jpg" alt="" width="130" height="130"/></a>
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="{{asset('images/grid-gallery-4-original.jpg')}}" data-lightgallery="item"><img src="{{asset('images/grid-gallery-4-130x130.jpg')}}" alt="" width="130" height="130"/></a>
                     </div>
                     <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-5-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-5-130x130.jpg" alt="" width="130" height="130"/></a>
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="{{asset('images/grid-gallery-5-original.jpg')}}" data-lightgallery="item"><img src="{{asset('images/grid-gallery-5-130x130.jpg')}}" alt="" width="130" height="130"/></a>
                     </div>
                     <div class="col-4 col-sm-2 col-lg-4">
-                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-6-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-6-130x130.jpg" alt="" width="130" height="130"/></a>
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="{{asset('images/grid-gallery-6-original.jpg')}}" data-lightgallery="item"><img src="{{asset('images/grid-gallery-6-130x130.jpg')}}" alt="" width="130" height="130"/></a>
                     </div>
                   </div>
                 </div>

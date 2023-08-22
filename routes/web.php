@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
+use App\Http\Controllers;
+use App\Http\Controllers\Controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +16,9 @@ use App\Http\Controllers\Admin;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/',[Controllers\HomeController::class,'index'])->name('home');
+Route::get('/products',[Controllers\ProductController::class,'list'])->name('product.list');
+Route::get('/product/{slug}',[Controllers\ProductController::class,'show'])->name('product.detail');
 
 
 

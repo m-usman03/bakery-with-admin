@@ -48,127 +48,22 @@
           <!-- Owl Carousel-->
           <div class="owl-carousel owl-style-9" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-margin="30" data-dots="true" data-autoplay="false">
             <!-- Product-->
-            <article class="product">
-              <div class="product-body">
-                <div class="product-figure"><img src="images/product-1-152x160.png" alt="" width="152" height="160"/>
-                </div>
-                <h5 class="product-title"><a href="single-product.html">Chocolate Truffles</a></h5>
-                <div class="product-price-wrap">
-                  <div class="product-price product-price-old">$30.00</div>
-                  <div class="product-price">$23.00</div>
-                </div>
-              </div><span class="product-badge product-badge-sale">Sale</span>
-              <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-              </div>
-            </article>
+            @foreach ($products as $product)
             <!-- Product-->
             <article class="product">
-              <div class="product-body">
-                <div class="product-figure"><img src="images/product-2-157x127.png" alt="" width="157" height="127"/>
+                <div class="product-body">
+                    <div class="product-figure">
+                        <img src="{{ asset('storage/' . $product->thumbnail) }}" alt="{{ $product->name }}" width="152" height="160"/>
+                    </div>
+                    <h5 class="product-title"><a href="{{ route('product.detail', $product->slug) }}">{{ $product->name }}</a></h5>
+                    <div class="product-price-wrap">
+                        <div class="product-price">${{ number_format($product->price, 2) }}</div>
+                    </div>
                 </div>
-                <h5 class="product-title"><a href="single-product.html">Chocolate Pudding</a></h5>
-                <div class="product-price-wrap">
-                  <div class="product-price">$25.00</div>
-                </div>
-              </div>
-              <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-              </div>
+                <!-- Add any additional badges or buttons here -->
             </article>
-            <!-- Product-->
-            <article class="product">
-              <div class="product-body">
-                <div class="product-figure"><img src="images/product-3-179x114.png" alt="" width="179" height="114"/>
-                </div>
-                <h5 class="product-title"><a href="single-product.html">Dark Chocolate Cake</a></h5>
-                <div class="product-price-wrap">
-                  <div class="product-price">$15.00</div>
-                </div>
-              </div><span class="product-badge product-badge-new">New</span>
-              <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-              </div>
-            </article>
-            <!-- Product-->
-            <article class="product">
-              <div class="product-body">
-                <div class="product-figure"><img src="images/product-4-215x112.png" alt="" width="215" height="112"/>
-                </div>
-                <h5 class="product-title"><a href="single-product.html">Chocolate Cookies</a></h5>
-                <div class="product-price-wrap">
-                  <div class="product-price">$12.00</div>
-                </div>
-              </div>
-              <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-              </div>
-            </article>
-            <!-- Product-->
-            <article class="product">
-              <div class="product-body">
-                <div class="product-figure"><img src="images/product-1-152x160.png" alt="" width="152" height="160"/>
-                </div>
-                <h5 class="product-title"><a href="single-product.html">Chocolate Truffles</a></h5>
-                <div class="product-price-wrap">
-                  <div class="product-price product-price-old">$30.00</div>
-                  <div class="product-price">$23.00</div>
-                </div>
-              </div><span class="product-badge product-badge-sale">Sale</span>
-              <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-              </div>
-            </article>
-            <!-- Product-->
-            <article class="product">
-              <div class="product-body">
-                <div class="product-figure"><img src="images/product-2-157x127.png" alt="" width="157" height="127"/>
-                </div>
-                <h5 class="product-title"><a href="single-product.html">Chocolate Pudding</a></h5>
-                <div class="product-price-wrap">
-                  <div class="product-price">$25.00</div>
-                </div>
-              </div>
-              <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-              </div>
-            </article>
-            <!-- Product-->
-            <article class="product">
-              <div class="product-body">
-                <div class="product-figure"><img src="images/product-3-179x114.png" alt="" width="179" height="114"/>
-                </div>
-                <h5 class="product-title"><a href="single-product.html">Dark Chocolate Cake</a></h5>
-                <div class="product-price-wrap">
-                  <div class="product-price">$15.00</div>
-                </div>
-              </div><span class="product-badge product-badge-new">New</span>
-              <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-              </div>
-            </article>
-            <!-- Product-->
-            <article class="product">
-              <div class="product-body">
-                <div class="product-figure"><img src="images/product-4-215x112.png" alt="" width="215" height="112"/>
-                </div>
-                <h5 class="product-title"><a href="single-product.html">Chocolate Cookies</a></h5>
-                <div class="product-price-wrap">
-                  <div class="product-price">$12.00</div>
-                </div>
-              </div>
-              <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-              </div>
-            </article>
+            @endforeach      
+                
           </div>
         </div>
       </section>
