@@ -19,8 +19,8 @@ use App\Http\Controllers\Controller;
 Route::get('/',[Controllers\HomeController::class,'index'])->name('home');
 Route::get('/products',[Controllers\ProductController::class,'list'])->name('product.list');
 Route::get('/product/{slug}',[Controllers\ProductController::class,'show'])->name('product.detail');
-
-
+Route::get('/cart', [Controllers\CartController::class,'index'])->name('cart.index');
+Route::post('/cart/add', [Controllers\CartController::class,'addToCart'])->name('cart.add');
 
 Route::group(['prefix'=>'admin','as'=>'admin.'],function(){
     Route::get('/login',[Admin\AuthController::class,'loginForm'])->name('login_form');

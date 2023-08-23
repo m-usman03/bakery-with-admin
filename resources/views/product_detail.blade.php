@@ -61,12 +61,16 @@
                         <li><span>Weight:</span><span>{{ $product->weight }}</span></li>
                         <li><span>Box:</span><span>{{ $product->box }}</span></li>
                     </ul>
+                    <form action="{{ route('cart.add') }}" method="post">
+                    @csrf
                     <div class="group-xs group-middle">
                         <div class="product-stepper">
-                            <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000">
+                            <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000" name="qty">
+                            <input type="hidden" name="product_id" value="{{ $product->id }}"> 
                         </div>
-                        <div><a class="button button-lg button-secondary button-zakaria" href="cart-page.html">Add to cart</a></div>
+                        <div><button class="button button-lg button-secondary button-zakaria">Add to cart</button></div>
                     </div>
+                    </form>
                     <hr class="hr-gray-100">
                     <div class="group-xs group-middle"><span class="list-social-title">Share</span>
                         <div>
