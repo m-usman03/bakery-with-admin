@@ -32,5 +32,6 @@ Route::group(['prefix'=>'admin','as'=>'admin.'],function(){
             Route::resource('/product',Admin\ProductController::class)->names('product');
             Route::resource('/topping',Admin\ToppingController::class)->names('topping');
             Route::post('/logout',[Admin\AuthController::class,'logout'])->name('logout');
+            Route::resource('/order',Admin\OrderController::class)->names('order');
         });
  });

@@ -27,6 +27,19 @@
 					<li><a href="{{ route('admin.topping.index') }}">List</a></li>
 				</ul>
 			</li>
+
+			<li class="{{ Request::is('admin/order*') ? 'mm-active' : '' }}">
+				<a class="has-arrow" href="javascript:void(0);" aria-expanded="{{ Request::is('admin/order*') ? 'true' : 'false' }}">
+					<div class="menu-icon">
+						<!-- SVG icon code here -->
+					</div>
+					<span class="nav-text">Orders</span>
+				</a>
+				<ul aria-expanded="{{ Request::is('admin/order*') ? 'true' : 'false' }}" class="{{ Request::is('admin/order*') ? 'left mm-collapse mm-show' : '' }}">
+				
+					<li><a href="{{ route('admin.order.index') }}">List</a></li>
+				</ul>
+			</li>
 		</ul>
 
 		<div class="copyright">

@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Notifications\OrderSuccessful;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Stripe\Stripe;
 use Stripe\Charge;
 
@@ -25,8 +27,8 @@ class CheckoutController extends Controller
             'last_name' => 'required',
             'address' => 'required',
             'city' => 'required',
-            'email' => 'required|email',
-            'phone' => 'nullable',
+            'email' => 'required|email|unique:customers,email',
+            'phone' => 'nullable|unique:customers,phone',
             'stripeToken' => 'required'
         ]);
 
@@ -41,13 +43,14 @@ class CheckoutController extends Controller
         Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
 
         try{
+          \DB::beginTransaction();
         // Create a Stripe charge
-        $charge = Charge::create([
-            'amount' => $totalAmount * 100, // Stripe requires amount in cents
-            'currency' => 'usd', // Change this to your desired currency
-            'source' => $request->stripeToken, // Token obtained from Stripe.js
-            'description' => 'Order payment',
-        ]);
+        // $charge = Charge::create([
+        //     'amount' => $totalAmount * 100, // Stripe requires amount in cents
+        //     'currency' => 'usd', // Change this to your desired currency
+        //     'source' => $request->stripeToken, // Token obtained from Stripe.js
+        //     'description' => 'Order payment',
+        // ]);
 
         // Save customer details to the database
         $customer = new Customer([
@@ -75,16 +78,19 @@ class CheckoutController extends Controller
             ]);
             $orderProduct->save();
         }
-
+        Notification::route('mail','admin@admin.com')->notify(new OrderSuccessful($order, $cartItems, $totalAmount));
+        Notification::route('mail','admin@admin.com')->notify(new OrderSuccessful($order, $cartItems, $totalAmount));
+        \DB::commit();
         return redirect()->route('checkout.success')->with('success', 'Payment successful!');
        }catch(Exception $e){
+        \DB::rollback();
         return back()->withInput($request->all());
        }
     }
 
     public function confirm()
-    {
-        
+    {        
+        session()->forget('cart');
         $cartItems = session()->get('cart');
         return view("confirm",compact('cartItems'));
     }
