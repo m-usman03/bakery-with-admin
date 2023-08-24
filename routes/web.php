@@ -21,6 +21,9 @@ Route::get('/products',[Controllers\ProductController::class,'list'])->name('pro
 Route::get('/product/{slug}',[Controllers\ProductController::class,'show'])->name('product.detail');
 Route::get('/cart', [Controllers\CartController::class,'index'])->name('cart.index');
 Route::post('/cart/add', [Controllers\CartController::class,'addToCart'])->name('cart.add');
+Route::get('/checkout', [Controllers\CheckoutController::class, 'index'])->name('checkout');
+Route::post('/checkout', [Controllers\CheckoutController::class, 'processCheckout'])->name('checkout.process');
+Route::get('/confirmation', [Controllers\CheckoutController::class, 'confirm'])->name('checkout.success');
 
 Route::group(['prefix'=>'admin','as'=>'admin.'],function(){
     Route::get('/login',[Admin\AuthController::class,'loginForm'])->name('login_form');

@@ -156,7 +156,7 @@
                 </div>
 
                 <div class="cart-inline-footer">
-                  <div class="group-sm"><a class="button button-default-outline-2 button-zakaria" href="{{route('cart.index')}}">Go to cart</a><a class="button button-primary button-zakaria" href="checkout.html">Checkout</a></div>
+                  <div class="group-sm"><a class="button button-default-outline-2 button-zakaria" href="{{route('cart.index')}}">Go to cart</a><a class="button button-primary button-zakaria" href="{{route('checkout')}}">Checkout</a></div>
                 </div>
               </div>
             </div><a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202 rd-navbar-fixed-element-2" href="{{route('cart.index')}}"><span>{{count($cartItems) }}</span></a>

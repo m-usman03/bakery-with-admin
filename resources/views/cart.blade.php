@@ -81,7 +81,7 @@
                             <div class="heading-5 font-weight-medium text-gray-500">Total</div>
                             <div class="heading-3 font-weight-normal">${{ number_format($totalPrice, 2) }}</div>
                         </div>
-                    </div><a class="button button-lg button-primary button-zakaria" href="checkout.html">Proceed to checkout</a>
+                    </div><a class="button button-lg button-primary button-zakaria" href="{{route('checkout')}}">Proceed to checkout</a>
                 </div>
             </div>
         </div>
