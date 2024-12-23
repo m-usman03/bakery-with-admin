@@ -57,13 +57,13 @@
 													</div>
 													<p>Enter your e-mail address and your password. </p>
 													<div class="form-group mb-3">
-														<input type="email" class="form-control" value="hello@example.com" name="email">
+														<input type="email" class="form-control" value="admin@admin.com" name="email">
                                                         @error('email')
                                                         <div class="text-danger">{{$message}}</div>
                                                         @enderror
 													</div>
 													<div class="form-group mb-3">
-														<input type="password" class="form-control" value="Password" name="password" name="password">
+														<input type="password" class="form-control" value="123admin" name="password">
                                                         @error('password')
                                                         <div class="text-danger">{{$message}}</div>
                                                         @enderror

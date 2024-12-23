@@ -10,6 +10,7 @@ class CartController extends Controller
 
     public function index()
     {
+       
         $cartItems = session()->get('cart', []);
         return view("cart",compact("cartItems"));
     }

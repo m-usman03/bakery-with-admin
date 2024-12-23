@@ -90,8 +90,8 @@ class CheckoutController extends Controller
 
     public function confirm()
     {        
-        session()->forget('cart');
         $cartItems = session()->get('cart');
+        session()->forget('cart');
         return view("confirm",compact('cartItems'));
     }
 }
